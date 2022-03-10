@@ -66,7 +66,12 @@ public class CustomList extends ArrayAdapter<City> {
      */
 
     public boolean hasCity(City city){
-        return false;
+        if (cities.contains(city)) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /**
@@ -75,7 +80,12 @@ public class CustomList extends ArrayAdapter<City> {
      *      This is a candidate city to delete
      */
     public void deleteCity(City city){
-        return;
+        if (cities.contains(city)) {
+            cities.remove(city);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -84,7 +94,7 @@ public class CustomList extends ArrayAdapter<City> {
      *      Return an int
      */
     public int countCities(){
-        return 0;
+        return cities.size();
     }
 
 }
